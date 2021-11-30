@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="title">DOM Manipulation with forms</h1>
+      <p id="description">Click on the button to add details</p>
+    </div>
+    <div class="container">
+      <div class="table table-details">
+        <table class="table table-entries hidden">
+          <thead>
+            <tr class="header-row">
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>PIN code</th>
+              <th>Gender</th>
+              <th>Food</th>
+              <th>State</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody class="table-body"></tbody>
+        </table>
+      </div>
+      <!-- Button trigger modal -->
+      <div class="row justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary btn-add_details"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Click to Add
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Enter the details
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container form-container">
+                <form id="form">
+                  <div class="form-goup">
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="inputfname">First Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="first-name"
+                          placeholder="First name"
+                          required
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="inputlname">Last Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="last-name"
+                          placeholder="Last name"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="inputaddress">Address</label>
+                        <textarea
+                          name="inputaddress"
+                          id="address"
+                          cols="30"
+                          rows="5"
+                          class="form-control"
+                          placeholder="Flat No:123, XYZ Society"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col">
+                        <label for="inputzip">PIN Code</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="pincode"
+                          placeholder="PIN CODE"
+                          required
+                        />
+                      </div>
+                      <div class="col">
+                        <label for="genderOption">Gender</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input gender_option"
+                            type="radio"
+                            name="genderOption"
+                            id="genderMale"
+                            value="Male"
+                          />
+                          <label class="form-check-label" for="genderMale"
+                            >Male</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input
+                            class="form-check-input gender_option"
+                            type="radio"
+                            name="genderOption"
+                            id="genderFemale"
+                            value="Female"
+                          />
+                          <label class="form-check-label" for="genderFemale"
+                            >Female</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col">
+                        <label class="form-check-label" for="food"
+                          >Food Choice (choose any 2)</label
+                        >
+                        <br />
+                        <input
+                          type="checkbox"
+                          name="food"
+                          id="foodChoice1"
+                          value="Pizza"
+                          class="form-check-inline food_choice"
+                        />
+                        <label for="foodChoice1">Pizza</label>
+                        <input
+                          type="checkbox"
+                          name="food"
+                          id="foodChoice2"
+                          value="Burger"
+                          class="form-check-inline food_choice"
+                        /><label for="foodChoice2">Burger</label>
+                        <input
+                          type="checkbox"
+                          name="food"
+                          id="foodChoice3"
+                          value="Pasta"
+                          class="form-check-inline food_choice"
+                        /><label for="foodChoice3">Pasta</label>
+                        <input
+                          type="checkbox"
+                          name="food"
+                          id="foodChoice4"
+                          value="Noodles"
+                          class="form-check-inline food_choice"
+                        /><label for="foodChoice4">Noodles</label>
+                        <input
+                          type="checkbox"
+                          name="food"
+                          id="foodChoice5"
+                          value="Momos"
+                          class="form-check-inline food_choice"
+                        /><label for="foodChoice5">Momos</label>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-6">
+                        <label for="inputState">State</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="state"
+                          placeholder="State Name"
+                        />
+                      </div>
+                      <div class="col-6">
+                        <label for="inputCountry">Country</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="country"
+                          placeholder="Country Name"
+                        />
+                      </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <button id="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

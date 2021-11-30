@@ -1,0 +1,18 @@
+body {
+  background-color: blanchedalmond;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: azure;
+}
+
+.hidden {
+  display: none;
+}
+
+#submit {
+  margin-top: 25px;
+}
